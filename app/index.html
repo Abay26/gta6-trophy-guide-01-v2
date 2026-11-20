@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">VL</div>
+    <div>
+      <h1>Vice Ledger</h1>
+      <p class="tagline">GTA VI trophy guide &amp; tracker — all 55 PlayStation 5 trophies, offline</p>
+    </div>
+  </div>
+  <div class="progress-card" id="progressCard">
+    <div class="progress-big"><span id="progressBig">0 / 55</span><span class="progress-sub" id="progressText">0 earned · 55 to go</span></div>
+    <div class="progress-bar" role="progressbar" aria-label="Trophies earned"><div class="progress-fill" id="progressFill"></div></div>
+    <p class="grade-line" id="gradeLine"></p>
+    <p class="next-up" id="nextUp"></p>
+  </div>
+</header>
+
+<div class="toolbar" role="search">
+  <label class="search-box">Search <input id="search" type="search" placeholder="Trophy, place, activity…" autocomplete="off"></label>
+  <label>Kind
+    <select id="kind">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="activity">Activities</option>
+      <option value="combat">Combat &amp; heists</option>
+      <option value="collectible">Collectibles</option>
+      <option value="exploration">Exploration</option>
+    </select>
+  </label>
+  <label>Grade
+    <select id="grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="check"><input id="hideEarned" type="checkbox"> Hide earned</label>
+  <label class="check"><input id="spoiler" type="checkbox"> Spoiler-safe</label>
+  <div class="tool-buttons">
+    <button id="export" type="button">Export progress</button>
+    <label class="import-btn">Import progress <input id="import" type="file" accept="application/json"></label>
+    <button id="reset" type="button">Reset</button>
+  </div>
+</div>
+
+<nav class="tabs" aria-label="Views">
+  <button type="button" data-view="checklist" class="active">Checklist</button>
+  <button type="button" data-view="roadmap">Roadmap</button>
+  <button type="button" data-view="missables">Missables &amp; watch-outs</button>
+  <button type="button" data-view="collectibles">Collectibles</button>
+</nav>
+
+<main class="layout">
+  <section class="list-pane">
+    <p class="result-count" id="resultCount"></p>
+    <div id="listView">
+      <table class="trophy-table">
+        <thead><tr><th class="col-earned">Earned</th><th>Trophy</th><th class="col-grade">Grade</th><th class="col-kind">Kind</th><th class="col-time">Time</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p id="emptyMsg" class="empty-msg" hidden>No trophies match these filters.</p>
+    </div>
+    <div id="roadmapView" hidden>
+      <ol class="phases" id="phases"></ol>
+    </div>
+    <div id="missablesView" hidden>
+      <div class="warn-card" id="missableCard"></div>
+      <h2 class="section-title">Time-sensitive — do these while the story is open</h2>
+      <ul class="watch-list" id="watchList"></ul>
+      <p class="safe-note" id="safeNote"></p>
+    </div>
+    <div id="collectiblesView" hidden>
+      <div class="collect-grid" id="collectGrid"></div>
+    </div>
+  </section>
+  <aside class="detail-pane" id="detail" aria-live="polite"></aside>
+</main>
+
+<footer class="footnote">
+  <p>Official trophy names, descriptions and grades as published by PlayStation, via Exophase and PSNProfiles. Every guide is written for this entry in its own words and cites its sources beside the trophy. Difficulty and time are the guide's own estimates, marked as such. No Rockstar logo, artwork or game screenshot is used anywhere. Works offline — no network requests at run time.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
